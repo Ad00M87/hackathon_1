@@ -9,7 +9,7 @@
 <%= f.label :description, 'Tell everyone about you' %>
 <%= f.text_area :description, required: true %>
 
-<%= f.submit 'Create', class: 'btn btn-primary' %>
+<%= f.submit 'Update', class: 'btn btn-primary' %>
 
 <% end %>
 <br>
@@ -19,3 +19,10 @@
   </div>
 </div>
 </div>
+
+
+<%= simple_form_for [@user, @bio] do |f| %>
+  <%= f.input :image %>
+  <%= f.input :caption %>
+  <%= f.button :submit %>
+<% end %>

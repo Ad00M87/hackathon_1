@@ -4,7 +4,7 @@
 <%= form_for [@user, @bio] do |f| %>
 
 <%= f.label :pro_image, 'Profile Image' %>
-<%= f.text_field :pro_image, required: true, autofocus: true %>
+<%= f.input :pro_image, required: true, autofocus: true %>
 
 <%= f.label :description, 'Tell everyone about you' %>
 <%= f.text_area :description, required: true %>
@@ -19,3 +19,4 @@
   </div>
 </div>
 </div>
+
