@@ -11,7 +11,7 @@ def create
     @post = Post.create(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to user_posts_path(@post.user_id)
+      redirect_to user_bio_path(@user, @user.bio)
     else
       render :new
     end
