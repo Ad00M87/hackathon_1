@@ -5,7 +5,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :user do
-    resources :bios
+
+  resources :users do
+    resources :bio
   end
+
+  resources :users do
+    resources :posts
+  end
+
 end
