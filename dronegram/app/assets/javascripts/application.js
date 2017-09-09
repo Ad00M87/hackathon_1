@@ -13,5 +13,8 @@
 //= require rails-ujs
 //= require jquery
 //= require materialize-sprockets
-//= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+      $('.parallax').parallax();
+    });
