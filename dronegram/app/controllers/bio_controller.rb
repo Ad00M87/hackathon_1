@@ -3,8 +3,12 @@ class BioController < ApplicationController
   before_action :set_bio except: [:index, :new, :create]
 
   def index
+    @bio = Bio.all
   end
 
+  def new
+  end
+  
   def create
   end
 
@@ -18,8 +22,6 @@ class BioController < ApplicationController
 
   end
 
-  def new
-  end
 
   def destroy
   end
