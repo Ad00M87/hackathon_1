@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909192448) do
+ActiveRecord::Schema.define(version: 20170909200208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bios", force: :cascade do |t|
+  create_table "bios", id: :serial, force: :cascade do |t|
     t.string "description"
     t.string "pro_image"
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_bios_on_user_id"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", id: :serial, force: :cascade do |t|
     t.string "pro_image"
     t.string "user_name"
     t.string "comment"
-    t.bigint "user_id"
-    t.bigint "post_id"
+    t.integer "user_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -37,20 +37,16 @@ ActiveRecord::Schema.define(version: 20170909192448) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "pro_image"
-    t.string "user_name"
-    t.string "body"
-    t.bigint "user_id"
+    t.string "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "user_name"
