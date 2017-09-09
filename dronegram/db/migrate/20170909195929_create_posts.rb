@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.string :caption
 
       t.timestamps
+      t.belongs_to :user
     end
   end
 end
